@@ -1,13 +1,17 @@
 /*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package treino1;
+package pooaula1;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import static java.time.Clock.system;
-import static java.time.InstantSource.system;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -55,9 +59,6 @@ public class Principal {
 
             pessoas.add(p);
         } while (true);
-
-        // Mostrar a quantidade de pessoas cadastradas
-        System.out.println("\nQuantidade de pessoas cadastradas: " + pessoas.size());
         
         //Calcular a idade de cada pessoas
         for(Pessoa p: pessoas){
@@ -69,9 +70,10 @@ public class Principal {
                 pessoasMaiorouIgual18++;
             }
         }
-        
+        //MOSTRAR A PERCENTUAL DAS IDADES
         double percentualMenor18 = (double) pessoasMenor18 / pessoas.size() * 100;
         double percentualMaiorouIgual18 = (double) pessoasMaiorouIgual18 / pessoas.size() * 100;
+        
         
         // Mostrar a média das idades
         int somaIdades = 0;
@@ -79,7 +81,7 @@ public class Principal {
             somaIdades += calcularIdade(p.datNascimento);
         }
         double mediaIdades = (double) somaIdades / pessoas.size();
-        System.out.println("Média das idades: " + mediaIdades);
+        
 
         // Mostrar a menor idade
         int menorIdade = Integer.MAX_VALUE;
@@ -89,7 +91,6 @@ public class Principal {
                 menorIdade = idade;
             }
         }
-        System.out.println("Menor idade: " + menorIdade);
 
         // Mostrar quem tem a maior idade e qual é sua idade
         int maiorIdade = Integer.MIN_VALUE;
@@ -101,7 +102,13 @@ public class Principal {
                 maisVelho = p;
             }
         }
+        
+        System.out.println("\nQuantidade de pessoas cadastradas: " + pessoas.size());
+        System.out.println("Média das idades: " + mediaIdades);
+        System.out.println("Menor idade: " + menorIdade);
         System.out.println("Pessoa mais velha: " + maisVelho.nome + ", idade: " + maiorIdade);
+        System.out.println("A percentual de pessoas menores de 18: " + pessoasMenor18 + "%");
+        System.out.println("A percentual de pessoas maiores ou igual de 18: " + pessoasMaiorouIgual18 + "%");
     }
 
     private static int calcularIdade(Date dataNascimento) {
