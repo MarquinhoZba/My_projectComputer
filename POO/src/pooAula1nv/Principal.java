@@ -107,8 +107,8 @@ public class Principal {
         System.out.println("Média das idades: " + mediaIdades);
         System.out.println("Menor idade: " + menorIdade);
         System.out.println("Pessoa mais velha: " + maisVelho.nome + ", idade: " + maiorIdade);
-        System.out.println("A percentual de pessoas menores de 18: " + pessoasMenor18 + "%");
-        System.out.println("A percentual de pessoas maiores ou igual de 18: " + pessoasMaiorouIgual18 + "%");
+        System.out.println("A percentual de pessoas menores de 18: " + percentualMenor18 + "%");
+        System.out.println("A percentual de pessoas maiores ou igual de 18: " + percentualMaiorouIgual18 + "%");
     }
 
     private static int calcularIdade(Date dataNascimento) {
